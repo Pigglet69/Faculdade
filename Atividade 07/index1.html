@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão que muda o fundo :D</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+            display: flex;
+            justify-content: center;
+            padding-top: 445px;
+        }
+
+    </style>
+</head>
+<body>
+     <button id="Botao">Mudar Cor de fundo</button>
+
+     <script>
+        const botao = document.getElementById('Botao')
+        const body = document.body
+
+        botao.addEventListener('click', function() {
+        const  corAleatoria = '#' + Math.floor(Math.random()*16777215).toString(16)
+    body.style.backgroundColor = corAleatoria})
+
+     </script>
+</body>
+</html>

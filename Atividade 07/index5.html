@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário</title>
+  <style>
+    #dados {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-width: 100%;
+      width: 20%;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="meuFormulario">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="mensagem">Mensagem:</label><br>
+    <textarea id="mensagem" name="mensagem"></textarea><br><br>
+
+    <button type="button" id="enviarBotao">Enviar</button>
+  </form>
+
+  <div id="dados"></div>
+
+  <script>
+    const formulario = document.getElementById('meuFormulario');
+    const botaoEnviar = document.getElementById('enviarBotao');
+    const dadosDiv = document.getElementById('dados');
+
+    botaoEnviar.addEventListener('click', function() {
+      const nome = formulario.nome.value;
+      const email = formulario.email.value;
+      const mensagem = formulario.mensagem.value;
+
+      dadosDiv.innerHTML = `
+        <p><strong>Nome:</strong> ${nome}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Mensagem:</strong> ${mensagem}</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
